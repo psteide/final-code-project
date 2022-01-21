@@ -15,10 +15,10 @@
     font-family: 'Open Sans', sans-serif;
 }
 
-main{
-    min-height: 85%;
-    color: var(--lred);
+html{
+    scroll-behavior: smooth;
 }
+
 
 header{
     background-color: var(--rred);
@@ -41,7 +41,7 @@ header > h1{
 }
 
 nav{
-    background: rgba(244,244,244, .85);
+    background: rgba(244,244,244, 1);
     padding: 10px;
     position: sticky;
     top: 69px;
@@ -77,10 +77,10 @@ main{
     width: 1200px;
     margin: 40px auto;
     box-sizing: border-box;
+    color: var(--lred);
 }
 
 footer{
-    position: static;
     background: var(--rred);
     color: white;
     padding: 10px;
@@ -120,8 +120,7 @@ footer{
     width: calc(100% + 4rem);
     background: var(--rred);
     z-index: -1;
-
-    transform: scaleX(0.075);
+    transform: scaleX(0.050);
     transform-origin: left;
     transition: transform 250ms ease-in;
 }
@@ -229,19 +228,14 @@ article.grid{
     line-height: 1.5em;
     color: black;
     font-size: 1.3em;
-    border: 2px solid black;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 
-}
-
-.grid_col_span_3{
-    grid-column: span 3;
 }
 
 .topsection ol, .topsection ul{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 20px;
-    left: 60px;
     font-size: 1.2rem;
     line-height: 1em;
 }
@@ -289,7 +283,7 @@ article.grid{
 .tutorial{
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
     background-color: var(--lgrey);
-    border: 2px solid black; 
+    
 }
 
 .tutorial h3{
@@ -338,6 +332,9 @@ article.grid{
 .overlay:hover{
     opacity: 1;
 
+}
+.overlay:hover > * {
+    transform: translateY(0);
 }
 
 .end{
@@ -514,4 +511,8 @@ hr.divider{
         opacity: 1;
     
     }
+    .before ul{
+        grid-template-columns: 1fr;
+        gap: 1em;
+    }   
 }
